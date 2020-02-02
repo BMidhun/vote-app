@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background:  #111;
+    color: #ddd;
+}
+
+.container
+{   width: 90%;
+    margin: 0px auto;
+}
+
+.l-heading {
+    font-size: 3.5rem;
+    margin: 0.75rem 0rem;
+}
+
+.m-heading {
+    font-size: 2.5rem;
+    margin: 0.65rem 0rem;
+}
+
+.spl-text {
+    color: #10D1B6;
+}
+
+input {
+
+    outline: none;
+    padding: 0.9rem 0.2rem;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+}
+
+.btn {
+    border: none;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    margin: 0.5rem 0.5rem;
+}
+
+.btn-dark {
+    background: #333;
+    color: #eee;
+}
+
+.btn-dark:hover{
+    background:#06C4DB;
+    color: #fff;
+}
+
+.link-span:hover {
+    color:#06C4DB;
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-col-container
+{display: flex;
+flex-direction: column;
+padding: 1rem;
+align-items: center;
+}
+/*  ----------- LOGIN PAGE---------------------------------- */
+
+.login-page {
+    height: 100vh;
+    background:#111 url('../imgs/bg-login.jpeg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+    color: #ddd;
+
+}
+
+.login-page .container {
+    padding-top: 8rem;
+}
+
+.login-page .login-box {
+    width: 40%;
+    margin: auto;
+    padding: 3rem 0rem;
+}
+
+
+
+
+
+.login-page .flex-col-container .flex-col-items {
+
+    margin:1rem 0rem;
+    width: 100%;
+}
+
+.login-page input {
+    border-bottom: 1.5px solid #7FC921;
+    /* border-radius: 15px */
+    color: #fff;
+}
+
+.login-page input:focus{
+    border-color: #06C4DB;
+}
+
+.login-page .btn-flexbox {
+    width : 100%;
+    display: flex;
+}
+
+.login-page .btn-flexbox .btn {
+
+    margin: 1rem;
+}
+
+/* ---------------VOTE PANEL---------------- */
+
+.vote-panel  .lang-item{
+    border: 2px solid #222;
+    padding: 3re;
+    width: 60%;
+    padding: 0.5rem 3rem;
+    margin: 0.5rem 0rem;
+    cursor: pointer;
+}
+
+.vote-panel #java:hover {
+    background: #333 url('../imgs/java.jpeg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
+
+
+.vote-panel #php:hover {
+    background: #333 url('../imgs/php.jpeg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
+.vote-panel #dotnet:hover {
+    background: #333 url('../imgs/dotnet.jpeg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
+.vote-panel #c:hover {
+    background: #333 url('../imgs/c.jpeg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
+.vote-panel #javascript:hover {
+    background: #333 url('../imgs/js.jpg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
