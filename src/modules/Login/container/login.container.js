@@ -1,13 +1,53 @@
 import React from 'react';
 import LoginComponent from '../component/login.component';
-import RegisterComponent from '../component/register.component';
+import { connect } from "react-redux";
+import LogUser from '../../../actions/user.actions';
 
-function LoginContainer() {
-    const [isLogin,setIsLogin] = React.useState(true);
+function LoginContainer(props) {
+
+    const [form,setForm] = React.useState({
+        username:'',
+        password : ''
+    })
+
+    const onInput = (event) => {
+        const data = {[event.target.name]:event.target.value}
+        setForm(prev=>({...prev,...data}))
+    }
+
+    const submitLogin = (event) => {
+        event.preventDefault();
+        let User=null
+        props.user.userdb.forEach(user => {
+            if(user.username === form.username && user.password === form.password) {
+                
+                User = {...user,auth:true}
+                props.history.push('/vote-panel')
+            }
+            
+        })
+
+        props.logUser(User);
+
+    }
+
+    React.useEffect(() => {console.log(props)},[props])
     
-    return isLogin ? <LoginComponent onSignIn = {() => {setIsLogin(false)}} /> 
-                    :  <RegisterComponent onLogIn = {() => {setIsLogin(true)}}/>
+    return <LoginComponent form={form} onInput={onInput} submitLogin={submitLogin}/> 
     
 }
 
-export default LoginContainer;
+const mapStateToProps = (state) => {
+
+    return {user : state.userDBReducer}
+}
+
+const mapDispatchToProps = (dispatch) => {
+
+        return {
+            logUser : (user) => dispatch(LogUser(user))
+        }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(LoginContainer);

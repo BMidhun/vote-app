@@ -1,4 +1,5 @@
 import React from 'react'
+import menuHOC from '../../shared/menu.hoc';
 
 const data = [ 'java','php','dotnet','c','javascript' ];
 
@@ -51,4 +52,4 @@ const VotePanelComponent = (props) => {
     )
 }
 
-export default VotePanelComponent;
+export default menuHOC (VotePanelComponent);
