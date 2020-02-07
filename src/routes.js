@@ -1,12 +1,11 @@
 import React from 'react'
-import { Switch,Redirect} from "react-router-dom";
+import { Switch} from "react-router-dom";
 import LoginContainer from "./modules/Login/container/login.container";
 import VotePanelContainer from './modules/VotePanel/container/votepanel.container';
 import PrivateRoutes from './private_routes';
 import VoteresultContainer from './modules/VoteResult/container/voteresult.container';
-import AppStorage from './modules/utils/storage';
 
-const Routes = (props) => {
+const Routes = () => {
     
     return (
         <Switch>
@@ -14,7 +13,6 @@ const Routes = (props) => {
             <PrivateRoutes path="/login" component={LoginContainer} />
             <PrivateRoutes path="/vote-panel" component = {VotePanelContainer} />
             <PrivateRoutes path="/vote-result" component = {VoteresultContainer} />
-            {/* <Redirect from="*" to="/login" push /> */}
         </Switch>
     )  
 }
