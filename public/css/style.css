@@ -263,6 +263,11 @@ align-items: center;
     border: 1px solid #555;
     border-radius: 8px;
     width: 200px;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-direction: normal;
 }
 
 .menu .menu-list {
@@ -273,6 +278,17 @@ align-items: center;
     border-top: 1px solid #333;
     align-items: center;
     margin: 0.5rem 0rem;
+    
+}
+
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
 }
 
 .menu-list:first-child {
