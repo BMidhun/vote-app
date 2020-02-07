@@ -1,8 +1,16 @@
-export default function LogUser(User){
+import AppStorage from '../modules/utils/storage'
 
-    return User  ? {
-        type:"LOGIN",
-        payload : User
-    } : {type:''}
+export  function LogUser(User){
 
+        AppStorage.set(User)
+        return {
+            type : "LOGIN",
+            payload : User
+        }
+}
+
+
+export  function Logout (User) {
+        AppStorage.set(User)
+        return {type:"LOGOUT",payload:User}
 }

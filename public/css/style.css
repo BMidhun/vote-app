@@ -50,6 +50,10 @@ a:hover {
     color:#777
 }
 
+.text-warning {
+    color:red
+}
+
 input {
 
     outline: none;
@@ -149,12 +153,15 @@ align-items: center;
 /* ---------------VOTE PANEL---------------- */
 
 .vote-panel  .lang-item{
+    display: flex;
     border: 2px solid #222;
     padding: 3re;
     width: 60%;
     padding: 0.5rem 3rem;
     margin: 0.5rem 0rem;
     cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .vote-panel #java:hover {
@@ -192,6 +199,7 @@ align-items: center;
     padding: 1rem 2rem;
     border-radius: 8px;
     box-shadow: 3px 4px 11px 1px #333;
+    margin:0.5rem 0rem
 
 }
 
@@ -202,15 +210,30 @@ align-items: center;
 }
 
 .progress {
-    border: 1px solid blue;
+    border: 1px solid #333;
     padding: 2px;
     border-radius: 27px;
-    background: blue;
-    transition-property: width;
-    transition-delay: 0.5s;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
     height: 10px;
+}
+
+.progress-box #java {
+    background: #09ABE8;
+}
+
+.progress-box #php {
+    background: #09E882;
+}
+
+.progress-box #dotnet {
+    background: #E809E1;
+}
+
+.progress-box #c {
+    background: #0D9BF2;
+}
+
+.progress-box #javascript {
+    background: #F2E10D;
 }
 
 

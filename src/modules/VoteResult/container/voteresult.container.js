@@ -1,11 +1,14 @@
 import React from 'react'
 import VoteresultComponent from '../component/voteresult.component'
-import menuHOC from '../../shared/menu.hoc';
+import { connect } from "react-redux";
 
-const VoteresultContainer = () => {
+const VoteresultContainer = (props) => {
+    let Result = props.voteReducer.votedata
     return (
-        <VoteresultComponent />
+        <VoteresultComponent Result = {Result} />
     )
 }
 
-export default menuHOC(VoteresultContainer);
+const mapStateToProps = (state) => {return state}
+
+export default connect(mapStateToProps,null)(VoteresultContainer);

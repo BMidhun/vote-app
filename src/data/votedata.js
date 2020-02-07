@@ -6,27 +6,22 @@ const votedata = [
     },
 
     {
-        lang_name : "Java",
+        lang_name : "PHP",
         lang_votes : 0
     },
 
     {
-        lang_name : "Java",
+        lang_name : "DOTNET",
         lang_votes : 0
     },
 
     {
-        lang_name : "Java",
+        lang_name : "C",
         lang_votes : 0
     },
 
     {
-        lang_name : "Java",
-        lang_votes : 0
-    },
-
-    {
-        lang_name : "Java",
+        lang_name : "JAVASCRIPT",
         lang_votes : 0
     }
 ]

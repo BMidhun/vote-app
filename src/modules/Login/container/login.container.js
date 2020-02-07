@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginComponent from '../component/login.component';
 import { connect } from "react-redux";
-import LogUser from '../../../actions/user.actions';
+import {LogUser} from '../../../actions/user.actions';
 
 function LoginContainer(props) {
 
@@ -10,36 +10,38 @@ function LoginContainer(props) {
         password : ''
     })
 
+    const [isLoginValid,setIsLoginValid] = React.useState(true)
+
     const onInput = (event) => {
+        setIsLoginValid(true)
         const data = {[event.target.name]:event.target.value}
         setForm(prev=>({...prev,...data}))
     }
 
     const submitLogin = (event) => {
         event.preventDefault();
-        let User=null
-        props.user.userdb.forEach(user => {
-            if(user.username === form.username && user.password === form.password) {
-                
-                User = {...user,auth:true}
-                props.history.push('/vote-panel')
-            }
+        if(form.username === props.user.userReducer.username && form.password === props.user.userReducer.password){
+            const User  = props.user.userReducer
+            User.auth = true
+             setIsLoginValid(true)
+             props.logUser(User); 
+             props.props.history.push('/vote-panel')
+        }
+        else
+            setIsLoginValid(false)
+        
             
-        })
-
-        props.logUser(User);
-
     }
 
     React.useEffect(() => {console.log(props)},[props])
     
-    return <LoginComponent form={form} onInput={onInput} submitLogin={submitLogin}/> 
+    return <LoginComponent form={form} onInput={onInput} submitLogin={submitLogin} isLoginValid = {isLoginValid}/> 
     
 }
 
 const mapStateToProps = (state) => {
 
-    return {user : state.userDBReducer}
+    return {user : state}
 }
 
 const mapDispatchToProps = (dispatch) => {

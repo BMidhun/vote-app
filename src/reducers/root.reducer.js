@@ -1,11 +1,12 @@
-import { combineReducers } from "redux";    
-import userDBReducer from './userdb.reducer'
+import { combineReducers } from "redux"; 
+import { connectRouter } from 'connected-react-router'   
 import userReducer from './user.reducer'
-// import voteReducer from './vote.reducer'
+import voteReducer from './vote.reducer'
 
-const rootReducer = combineReducers({
-    userDBReducer,
-    userReducer
+const rootReducer = (history) => combineReducers({
+    router : connectRouter(history),
+    userReducer : userReducer,
+    voteReducer : voteReducer
 });
 
 

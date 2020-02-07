@@ -1,10 +1,13 @@
 import React from 'react'
-import LandingPageHOC from '../HOC/landingpage.hoc'
-import { Link } from "react-router-dom";
 
-const LoginComponent = ({form,onInput,submitLogin}) => {
+const LoginComponent = ({form,onInput,submitLogin,isLoginValid}) => {
     return (
-            <LandingPageHOC >
+        <div className="login-page text-center">
+        <div className="container">
+             <h1 className="l-heading"> 
+                <span className="spl-text">CAST</span> YOUR VOTES
+            </h1>
+            <div className="login-box">
 
                     <h2 className="m-heading">LOGIN</h2>
                     <div className="flex-col-container">
@@ -29,16 +32,14 @@ const LoginComponent = ({form,onInput,submitLogin}) => {
 
                         <button className="btn btn-dark flex-col-items" type="submit">LOGIN</button>
                         </form>
-                        <p>Not a registered user? 
-                            <span className="link-span">
-                                <Link to="/register">
-                                   SignIn
-                                </Link>
-                                </span> Now</p>
-
+                        
                     </div>
+
+                 {isLoginValid ? null : window.alert("Invalid Credentials")}
                  
-            </LandingPageHOC>
+                 </div>
+                </div>
+        </div>
 
           
     )
